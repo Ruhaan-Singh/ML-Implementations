@@ -9,7 +9,6 @@ def normalize(array_in, dim=(1)):
 
     return array_out
 
-
 def standardize(array_in, dim=(1), episilon=1e-7):
     means = np.mean(array_in, axis=dim, keepdims=True)
     std_dev = np.std(array_in, axis=dim, keepdims=True)
@@ -17,5 +16,12 @@ def standardize(array_in, dim=(1), episilon=1e-7):
     array_out = (array_in - means)/(std_dev + episilon)
 
     return array_out
+
+def synth_data(X_shape,):
+    X = np.random.standard_normal(X_shape)
+    y = np.random.standard_normal(1)
+
+    return X,y
+
 
 
