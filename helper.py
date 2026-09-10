@@ -17,11 +17,19 @@ def standardize(array_in, dim=(1), episilon=1e-7):
 
     return array_out
 
-def synth_data(X_shape,):
+def synth_data(X_shape:tuple):
     X = np.random.standard_normal(X_shape)
     y = np.random.standard_normal(1)
 
     return X,y
 
-def DataLoader(X_input, y_input, batch_size=len(y_input)):
+def Dataset(X_input, y_input, batch_size=1,):
+    X_batched = 1
+
     return
+
+
+def kaiming_init(size:tuple):
+   matrix = np.random.normal(0, 2/size[-1], size)
+
+   return matrix
