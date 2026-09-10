@@ -30,6 +30,6 @@ def Dataset(X_input, y_input, batch_size=1,):
 
 
 def kaiming_init(size:tuple):
-   matrix = np.random.normal(0, 2/size[-1], size)
+   matrix = np.random.normal(0, 2/size[0], size) #[0] is for input dim
 
    return matrix
