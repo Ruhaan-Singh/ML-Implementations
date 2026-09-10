@@ -23,5 +23,5 @@ def synth_data(X_shape,):
 
     return X,y
 
-
-
+def DataLoader(X_input, y_input, batch_size=len(y_input)):
+    return
