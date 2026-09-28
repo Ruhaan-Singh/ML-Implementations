@@ -44,6 +44,6 @@ def Dataset(X_input, y_input, batch_size=1,):
     new_shape = reshaped + X_input.shape[1:]
 
     X_input = np.reshape(X_input,new_shape)
-    y_input = np.reshape(X_input,new_shape)
+    y_input = np.reshape(y_input,reshaped)
 
     return X_input,y_input
