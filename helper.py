@@ -19,8 +19,12 @@ def standardize(array_in, dim=(1), episilon=1e-7):
     return array_out
 
 
-def synth_data(X_shape:tuple):
+def synth_data(X_shape:tuple,num_classes=0):
     X = np.random.standard_normal(X_shape)
+
+    if num_classes != 0:
+        pass
+    
     y = np.random.standard_normal(X_shape[0])
 
     return X,y
