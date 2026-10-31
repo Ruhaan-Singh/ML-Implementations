@@ -9,7 +9,6 @@ def normalize(array_in, dim=(1)):
 
     return array_out
 
-
 def standardize(array_in, dim=(1), episilon=1e-7):
     means = np.mean(array_in, axis=dim, keepdims=True)
     std_dev = np.std(array_in, axis=dim, keepdims=True)
@@ -17,7 +16,6 @@ def standardize(array_in, dim=(1), episilon=1e-7):
     array_out = (array_in - means)/(std_dev + episilon)
 
     return array_out
-
 
 def synth_data(X_shape:tuple,num_classes=0):
     X = np.random.standard_normal(X_shape)
@@ -29,12 +27,13 @@ def synth_data(X_shape:tuple,num_classes=0):
 
     return X,y
 
-
-def kaiming_init(size:tuple):
-   matrix = np.random.normal(0, 2/size[0], size) #[0] is for input dim
-
+def kaiming_init(in_size,out_size):
+   matrix = np.random.normal(0, 2/in_size, (in_size,out_size))
    return matrix
 
+def xavier_init(in_size,out_size):
+    matrix = np.random.normal(-np.sqrt(6/(in_size + out_size)),np.sqrt(6/(in_size + out_size)),(in_size,out_size))
+    return matrix
 
 def Dataset(X_input, y_input, batch_size=1,):
     length = X_input.shape[0]

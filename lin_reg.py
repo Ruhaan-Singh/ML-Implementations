@@ -4,8 +4,8 @@ import loss_functions
 import optimizers
 
 class LinearRegression:
-        def __init__(self, input_size, weights=None,bias=None):
-                self.weights = helper.kaiming_init((input_size,))
+        def __init__(self, input_size, output_size=1, weights=None,bias=None):
+                self.weights = np.squeeze(helper.kaiming_init(input_size,output_size))
                 self.bias = 0
 
         def forward(self, X):
