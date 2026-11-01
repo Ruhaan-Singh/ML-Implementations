@@ -15,4 +15,7 @@ class LogLoss():
         return np.sum(y_true.T @ np.log(y_pred) + (1-y_true).T @ np.log(1-y_pred))/(-1*y_true.shape[0])
 
     def gradient(self,X,y_true,y_pred):
-        pass
+        weight_grad = (X.T @ (y_true-y_pred))/(y_true.shape[0])
+        bias_grad = np.sum(y_true-y_pred)/(y_true.shape[0])
+
+        return weight_grad,bias_grad
